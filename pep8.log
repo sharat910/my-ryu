@@ -1,0 +1,18 @@
+ryu/tests/switch/tester.py:573:17: E126 continuation line over-indented for hanging indent
+                {'flows': ', '.join(ng_stats)},
+                ^
+ryu/tests/switch/tester.py:955:17: E126 continuation line over-indented for hanging indent
+                [STATE_FLOW_EXIST_CHK,
+                ^
+ryu/app/ws_topology.py:29:80: E501 line too long (322 > 79 characters)
+< {"params": [{"ports": [{"hw_addr": "56:c7:08:12:bb:36", "name": "s1-eth1", "port_no": "00000001", "dpid": "0000000000000001"}, {"hw_addr": "de:b9:49:24:74:3f", "name": "s1-eth2", "port_no": "00000002", "dpid": "0000000000000001"}], "dpid": "0000000000000001"}], "jsonrpc": "2.0", "method": "event_switch_enter", "id": 1}
+                                                                               ^
+ryu/app/ws_topology.py:32:80: E501 line too long (322 > 79 characters)
+< {"params": [{"ports": [{"hw_addr": "56:c7:08:12:bb:36", "name": "s1-eth1", "port_no": "00000001", "dpid": "0000000000000001"}, {"hw_addr": "de:b9:49:24:74:3f", "name": "s1-eth2", "port_no": "00000002", "dpid": "0000000000000001"}], "dpid": "0000000000000001"}], "jsonrpc": "2.0", "method": "event_switch_leave", "id": 2}
+                                                                               ^
+ryu/services/protocols/bgp/application.py:100:23: E128 continuation line under-indented for visual indent
+                      net_ctrl.NC_RPC_BIND_PORT: self.bind_port})
+                      ^
+ryu/services/protocols/bgp/info_base/vrf.py:217:17: E122 continuation line missing indentation or outdented
+                rt_list=vrf_conf.export_rts, soo_list=vrf_conf.soo_list)
+                ^

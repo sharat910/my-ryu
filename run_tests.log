@@ -1,0 +1,167 @@
+nose.config: INFO: Ignoring files matching ['^\\.', '^_', '^setup\\.py$']
+2014-05-26 20:41:49,775 INFO loading app ryu.tests.unit.cmd.dummy_app
+loading app ryu.tests.unit.cmd.dummy_app
+2014-05-26 20:41:49,776 INFO instantiating app ryu.tests.unit.cmd.dummy_app of DummyApp
+instantiating app ryu.tests.unit.cmd.dummy_app of DummyApp
+2014-05-26 20:41:49,777 DEBUG BRICK DummyApp
+BRICK DummyApp
+2014-05-26 20:41:49,790 INFO loading app ryu.tests.unit.cmd.dummy_openflow_app
+loading app ryu.tests.unit.cmd.dummy_openflow_app
+loading app ryu.tests.unit.cmd.dummy_openflow_app
+2014-05-26 20:41:49,790 INFO instantiating app ryu.tests.unit.cmd.dummy_openflow_app of DummyOpenFlowApp
+instantiating app ryu.tests.unit.cmd.dummy_openflow_app of DummyOpenFlowApp
+instantiating app ryu.tests.unit.cmd.dummy_openflow_app of DummyOpenFlowApp
+2014-05-26 20:41:49,791 DEBUG BRICK DummyOpenFlowApp
+BRICK DummyOpenFlowApp
+BRICK DummyOpenFlowApp
+ryu-manager 3.9
+2014-05-26 20:41:56,131 ERROR hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 220, in _child
+    raise Exception("hoge")
+Exception: hoge
+
+hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 220, in _child
+    raise Exception("hoge")
+Exception: hoge
+
+hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 220, in _child
+    raise Exception("hoge")
+Exception: hoge
+
+2014-05-26 20:41:56,132 ERROR hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 220, in _child
+    raise Exception("hoge")
+Exception: hoge
+
+hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 220, in _child
+    raise Exception("hoge")
+Exception: hoge
+
+hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 220, in _child
+    raise Exception("hoge")
+Exception: hoge
+
+2014-05-26 20:41:57,639 ERROR hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 157, in _child
+    raise BaseException("this exception should not be propagated")
+BaseException: this exception should not be propagated
+
+hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 157, in _child
+    raise BaseException("this exception should not be propagated")
+BaseException: this exception should not be propagated
+
+hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 157, in _child
+    raise BaseException("this exception should not be propagated")
+BaseException: this exception should not be propagated
+
+2014-05-26 20:41:57,641 ERROR hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 157, in _child
+    raise BaseException("this exception should not be propagated")
+BaseException: this exception should not be propagated
+
+hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 157, in _child
+    raise BaseException("this exception should not be propagated")
+BaseException: this exception should not be propagated
+
+hub: uncaught exception: Traceback (most recent call last):
+  File "/home/ubuntu/ryu/ryu/lib/hub.py", line 52, in _launch
+    func(*args, **kwargs)
+  File "/home/ubuntu/ryu/ryu/tests/unit/lib/test_hub.py", line 157, in _child
+    raise BaseException("this exception should not be propagated")
+BaseException: this exception should not be propagated
+
+2014-05-26 20:41:59,330 DEBUG The packet is discarded by <class 'ryu.lib.ofp_pktinfilter.RequiredTypeFilter'>: ethernet(dst='ff:ff:ff:ff:ff:ff',ethertype=2048,src='ff:ff:ff:ff:ff:ff'), ipv4(csum=48106,dst='0.0.0.0',flags=0,header_length=5,identification=0,offset=0,option=None,proto=0,src='0.0.0.0',tos=0,total_length=20,ttl=255,version=4)
+The packet is discarded by <class 'ryu.lib.ofp_pktinfilter.RequiredTypeFilter'>: ethernet(dst='ff:ff:ff:ff:ff:ff',ethertype=2048,src='ff:ff:ff:ff:ff:ff'), ipv4(csum=48106,dst='0.0.0.0',flags=0,header_length=5,identification=0,offset=0,option=None,proto=0,src='0.0.0.0',tos=0,total_length=20,ttl=255,version=4)
+The packet is discarded by <class 'ryu.lib.ofp_pktinfilter.RequiredTypeFilter'>: ethernet(dst='ff:ff:ff:ff:ff:ff',ethertype=2048,src='ff:ff:ff:ff:ff:ff'), ipv4(csum=48106,dst='0.0.0.0',flags=0,header_length=5,identification=0,offset=0,option=None,proto=0,src='0.0.0.0',tos=0,total_length=20,ttl=255,version=4)
+2014-05-26 20:41:59,335 DEBUG The packet is discarded by <class 'ryu.lib.ofp_pktinfilter.RequiredTypeFilter'>: 
+The packet is discarded by <class 'ryu.lib.ofp_pktinfilter.RequiredTypeFilter'>: 
+The packet is discarded by <class 'ryu.lib.ofp_pktinfilter.RequiredTypeFilter'>: 
+2014-05-26 20:42:02,894 DEBUG setUp
+setUp
+setUp
+2014-05-26 20:42:02,895 DEBUG version: 0x1 msg_type 0x6 xid 0x2 OFPSwitchFeatures(actions=4095,capabilities=135,datapath_id=2748,n_buffers=256,n_tables=1,ports={1: OFPPhyPort(port_no=1,hw_addr='22:00:d6:c5:a1:94',name='trema1-0',config=0,state=0,curr=192,advertised=0,supported=0,peer=0), 2: OFPPhyPort(port_no=2,hw_addr='ae:fa:39:d2:b9:17',name='trema0-0',config=0,state=0,curr=192,advertised=0,supported=0,peer=0), 65534: OFPPhyPort(port_no=65534,hw_addr='72:3f:9a:76:4c:c8',name='vsw_0xabc',config=1,state=1,curr=130,advertised=0,supported=0,peer=0)})
+version: 0x1 msg_type 0x6 xid 0x2 OFPSwitchFeatures(actions=4095,capabilities=135,datapath_id=2748,n_buffers=256,n_tables=1,ports={1: OFPPhyPort(port_no=1,hw_addr='22:00:d6:c5:a1:94',name='trema1-0',config=0,state=0,curr=192,advertised=0,supported=0,peer=0), 2: OFPPhyPort(port_no=2,hw_addr='ae:fa:39:d2:b9:17',name='trema0-0',config=0,state=0,curr=192,advertised=0,supported=0,peer=0), 65534: OFPPhyPort(port_no=65534,hw_addr='72:3f:9a:76:4c:c8',name='vsw_0xabc',config=1,state=1,curr=130,advertised=0,supported=0,peer=0)})
+version: 0x1 msg_type 0x6 xid 0x2 OFPSwitchFeatures(actions=4095,capabilities=135,datapath_id=2748,n_buffers=256,n_tables=1,ports={1: OFPPhyPort(port_no=1,hw_addr='22:00:d6:c5:a1:94',name='trema1-0',config=0,state=0,curr=192,advertised=0,supported=0,peer=0), 2: OFPPhyPort(port_no=2,hw_addr='ae:fa:39:d2:b9:17',name='trema0-0',config=0,state=0,curr=192,advertised=0,supported=0,peer=0), 65534: OFPPhyPort(port_no=65534,hw_addr='72:3f:9a:76:4c:c8',name='vsw_0xabc',config=1,state=1,curr=130,advertised=0,supported=0,peer=0)})
+2014-05-26 20:42:02,896 DEBUG OFPPhyPort(port_no=65534,hw_addr='72:3f:9a:76:4c:c8',name='vsw_0xabc',config=1,state=1,curr=130,advertised=0,supported=0,peer=0)
+OFPPhyPort(port_no=65534,hw_addr='72:3f:9a:76:4c:c8',name='vsw_0xabc',config=1,state=1,curr=130,advertised=0,supported=0,peer=0)
+OFPPhyPort(port_no=65534,hw_addr='72:3f:9a:76:4c:c8',name='vsw_0xabc',config=1,state=1,curr=130,advertised=0,supported=0,peer=0)
+2014-05-26 20:42:02,897 DEBUG tearDown
+tearDown
+tearDown
+2014-05-26 20:42:02,897 DEBUG setUp
+setUp
+setUp
+2014-05-26 20:42:02,897 DEBUG tearDown
+tearDown
+tearDown
+2014-05-26 20:42:02,898 DEBUG setUp
+setUp
+setUp
+2014-05-26 20:42:02,898 DEBUG version: 0x1 msg_type 0xa xid 0x0 OFPPacketIn(buffer_id=257,data='\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x01\x08\x00E\x00\x002\x00\x00\x00\x00@\x11\xf9g\xc0\xa8\x00\x01\xc0\xa8\x00\x02\x00\x01\x00\x01\x00\x1e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',in_port=2,reason=0,total_len=64)
+version: 0x1 msg_type 0xa xid 0x0 OFPPacketIn(buffer_id=257,data='\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x01\x08\x00E\x00\x002\x00\x00\x00\x00@\x11\xf9g\xc0\xa8\x00\x01\xc0\xa8\x00\x02\x00\x01\x00\x01\x00\x1e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',in_port=2,reason=0,total_len=64)
+version: 0x1 msg_type 0xa xid 0x0 OFPPacketIn(buffer_id=257,data='\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x01\x08\x00E\x00\x002\x00\x00\x00\x00@\x11\xf9g\xc0\xa8\x00\x01\xc0\xa8\x00\x02\x00\x01\x00\x01\x00\x1e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',in_port=2,reason=0,total_len=64)
+2014-05-26 20:42:02,899 DEBUG tearDown
+tearDown
+tearDown
+2014-05-26 20:42:02,900 DEBUG setUp
+setUp
+setUp
+2014-05-26 20:42:02,900 DEBUG tearDown
+tearDown
+tearDown
+2014-05-26 20:42:02,901 DEBUG setUp
+setUp
+setUp
+2014-05-26 20:42:02,901 DEBUG tearDown
+tearDown
+tearDown
+2014-05-26 20:42:30,218 DEBUG (ethernet(dst='aa:aa:aa:aa:aa:aa',ethertype=2054,src='bb:bb:bb:bb:bb:bb'), <class 'ryu.lib.packet.arp.arp'>)
+(ethernet(dst='aa:aa:aa:aa:aa:aa',ethertype=2054,src='bb:bb:bb:bb:bb:bb'), <class 'ryu.lib.packet.arp.arp'>)
+(ethernet(dst='aa:aa:aa:aa:aa:aa',ethertype=2054,src='bb:bb:bb:bb:bb:bb'), <class 'ryu.lib.packet.arp.arp'>)
+2014-05-26 20:42:30,326 INFO '\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03'
+'\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03'
+'\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03'
+2014-05-26 20:42:30,384 INFO bytearray(b'\x06\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+bytearray(b'\x06\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+bytearray(b'\x06\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+2014-05-26 20:42:30,385 INFO (6, 2, 0, 0)
+(6, 2, 0, 0)
+(6, 2, 0, 0)
+2014-05-26 20:42:30,455 INFO bytearray(b'\x06\x00\x03\x00\x00\x00\x00\x00')
+bytearray(b'\x06\x00\x03\x00\x00\x00\x00\x00')
+bytearray(b'\x06\x00\x03\x00\x00\x00\x00\x00')
+2014-05-26 20:42:30,455 INFO (6, 0, 3, 0, 0, 0)
+(6, 0, 3, 0, 0, 0)
+(6, 0, 3, 0, 0, 0)
+2014-05-26 20:42:30,695 DEBUG testS1Func1 - START
+testS1Func1 - START
+testS1Func1 - START
