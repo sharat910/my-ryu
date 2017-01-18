@@ -41,14 +41,15 @@ class ProjectController(app_manager.RyuApp):
         self.dpset = kwargs['dpset']
         self.host_tracker = kwargs['host_tracker']
         self.switch_data = {}
-        self.macports = {}
+        self.port_macs = {}
+        self.host_macs = {}
         self.dpdic = {}
         self.desc_request_semaphore = {}
         self.RTT = {}
         self.start_time = {}
         self.datapath_RTT_thread = hub.spawn(self._get_datapath_RTT)
         #self.mon_thread = hub.spawn(self.broadcast_mon_packet)
-        self.link_delay_thread = hub.spawn(self.calc_link_delay)
+        #self.link_delay_thread = hub.spawn(self.update_graph_using_delay)
   
     # Handy function that lists all attributes in the given object
     def ls(self,obj):
@@ -83,6 +84,8 @@ class ProjectController(app_manager.RyuApp):
     def dispacher_change(self, ev):
         assert ev.datapath is not None
         dp = ev.datapath
+        if dp.id is None:
+            return
         if ev.state == MAIN_DISPATCHER:
             self.dpdic[dp.id] = dp
             self.desc_request_semaphore[dp.id] = Lock()
@@ -116,21 +119,23 @@ class ProjectController(app_manager.RyuApp):
         src = eth.src
         dpid = datapath.id
         self.mac_to_port.setdefault(dpid, {})
-        if not eth.ethertype == ether_types.ETH_TYPE_LLDP:            
+        if not eth.ethertype == ether_types.ETH_TYPE_LLDP:
+            #print eth            
             self.logger.info("packet in %s %s %s %s", dpid, src, dst, in_port)
             #print self.net[1]
             #print self.net[2]
 
         #Add to graph
-        if src not in self.net and src not in self.macports:
+        if src not in self.net and src not in self.port_macs.keys():
             print "Adding new node",src,"to",str(dpid)
+            self.host_macs[src] = {'dpid':dpid,'port_no':in_port}
             self.net.add_node(src)
             self.net.add_edge(dpid,src,{'port':in_port})
             self.net.add_edge(src,dpid)
 
         if dst in self.net:
-            #print "here"            
-            path=nx.shortest_path(self.net,src,dst)              
+            self.update_graph_using_delay()
+            path=nx.shortest_path(self.net,src,dst,weight = 'delay')              
             self.install_flows_in_path(path,in_port)
             next=path[path.index(dpid)+1]
             out_port=self.net[dpid][next]['port']
@@ -166,7 +171,7 @@ class ProjectController(app_manager.RyuApp):
           self.switch_data[dpid] = {}
           for port in ports:
               self.switch_data[dpid][port.port_no] = port.hw_addr
-              self.macports[port.hw_addr] = (dpid,port.port_no)
+              self.port_macs[port.hw_addr] = {'dpid':dpid,'port_no':port.port_no}
        
         links_list = get_link(self.topology_api_app, None)
         #print links_list
@@ -193,6 +198,7 @@ class ProjectController(app_manager.RyuApp):
             out_port=self.net[cur_node][next_node]['port']
             #print out_port
             datapath = self.dpdic[cur_node]
+            print "Installing flow rull to %d"%datapath.id
             actions = [datapath.ofproto_parser.OFPActionOutput(out_port)]
             self.add_flow(datapath, in_port, dst, actions)
             if i != path_length -1:
@@ -243,7 +249,7 @@ class ProjectController(app_manager.RyuApp):
 
     def _get_datapath_RTT(self):
         while True:
-            print "Getting RTT"
+            #print "Getting RTT"
             self._send_echo_request()
             hub.sleep(5)
 
@@ -284,8 +290,8 @@ class ProjectController(app_manager.RyuApp):
         print "handle mon called"
         print datapath.id, eth
 
-    def calc_link_delay(self):        
-        print "Updating weight"
+    def update_graph_using_delay(self):        
+        print "Updating graph edge weights"
         links_list = get_link(self.topology_api_app, None)
         all_ports = self.top_switches.ports
         for link in links_list:
@@ -300,4 +306,4 @@ class ProjectController(app_manager.RyuApp):
         link_delay = lldp_delay - src_delay/2 - dst_delay/2
 
         ## Update Graph weight
-        self.net[src_dpid][dst_dpid]['delay'] = link_delay
+        self.net[src_dpid][dst_dpid]['delay'] = max(0,link_delay)
